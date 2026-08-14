@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
-  --status: #66ff00c7;
+  --status:  #7dff4d;
   --bg: #050505;
   --panel: #0b0b0b;
   --line: #292929;
   --white: #f4f4f4;
   --muted: #888;
-  --red: #8d1d1d;
-  --red2: #b72b2b;
+  --red: #6d161679;
+  --red2: #b72b2bb0;
 }
 
 * {
@@ -65,6 +65,7 @@ button {
   border-radius: 4px;
   padding: 12px 18px;
   font-size: 10px;
+  font-weight: 600;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: #bbb;
@@ -97,6 +98,21 @@ button {
 .status span {
   color: var(--status);
   box-shadow: 0px 1px 0px 0px var(--status);
+  animation: pulseGlow 2.5s infinite;
+}
+@keyframes pulseGlow {
+  0%, 100%{
+    text-shadow: 2px 2px 6px var(--status);
+    transform: scale(1.5);
+  }
+  50%{
+    text-shadow: 
+    0 0 80px var(--status),
+    0 0 80px var(--status),
+    0 0 160px var(--status);
+    transform: scale(2.5);
+    
+  }
 }
 
 .hero {
@@ -169,7 +185,6 @@ button {
   margin-top: 30px;
   padding: 15px 23px;
   background: var(--red);
-  border: 1px solid #b23a3a;
   border-radius: 3px;
   font-size: 11px;
   font-weight: 800;
