@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
-  --status:  #7dff4d;
+  --status: #7dff4d;
   --bg: #050505;
   --panel: #0b0b0b;
   --line: #292929;
   --white: #f4f4f4;
   --muted: #888;
-  --red: #6d161679;
-  --red2: #b72b2bb0;
+  --red: #00000079;
+  --red2: #000000b0;
 }
 
 * {
@@ -71,15 +71,15 @@ button {
   color: #bbb;
 }
 
-.nav a::after{
+.nav a::after {
   content: '';
   position: absolute;
-  bottom: 0; 
-  width: 0; 
-  left: 0; 
-  height: 2px;  
+  bottom: 0;
+  width: 0;
+  left: 0;
+  height: 2px;
   background: #ffffff;
-  transition: width 0.6s ease; 
+  transition: width 0.6s ease;
 }
 
 .nav :hover::after {
@@ -98,20 +98,45 @@ button {
 .status span {
   color: var(--status);
   box-shadow: 0px 1px 0px 0px var(--status);
-  animation: pulseGlow 2.5s infinite;
+  animation: pulseGlow 5s ease-in-out infinite;
 }
+
 @keyframes pulseGlow {
-  0%, 100%{
-    text-shadow: 2px 2px 6px var(--status);
-    transform: scale(1.5);
+  0% {
+    opacity: 0.45;
+    text-shadow:
+      0 0 2px var(--status),
+      0 0 4px var(--status);
   }
-  50%{
-    text-shadow: 
-    0 0 80px var(--status),
-    0 0 80px var(--status),
-    0 0 160px var(--status);
-    transform: scale(2.5);
-    
+
+  25% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px var(--status),
+      0 0 12px var(--status),
+      0 0 25px var(--status);
+  }
+
+  50% {
+    opacity: 0.35;
+    text-shadow:
+      0 0 2px var(--status);
+  }
+
+  75% {
+    opacity: 1;
+    text-shadow:
+      0 0 8px var(--status),
+      0 0 20px var(--status),
+      0 0 45px var(--status),
+      0 0 80px var(--status);
+  }
+
+  100% {
+    opacity: 0.45;
+    text-shadow:
+      0 0 2px var(--status),
+      0 0 4px var(--status);
   }
 }
 
@@ -181,33 +206,62 @@ button {
 }
 
 .cta {
+  position: relative;
   display: inline-flex;
   margin-top: 30px;
-  padding: 15px 23px;
   background: var(--red);
+  padding: 15px 23px;
   border-radius: 3px;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: .15em;
   text-transform: uppercase;
-  transition: .25s;
+  transition: 0.25s;
+  z-index: 0;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 20px;
+  background: repeating-conic-gradient(from var(--a), #fff 0%, #fff 5%, transparent 5%, transparent 40%, #fff 50%);
+  animation: spin 8s linear infinite;
+  animation-delay: -9s;
+  border-radius: 4px;
+}
+
+.cta::after{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: "Explorar projetos ↓";
+  padding: 0 23px;
+  white-space: nowrap;
+  position: absolute;
+  inset: 3px;
+  border-radius: 4px;
+  background: #1b1b1b;
+}
+
+@property --a {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: true;
+}
+
+@keyframes spin {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
 }
 
 .cta:hover {
   background: var(--red2);
   transform: translateY(-2px)
-}
-
-.scroll {
-  position: absolute;
-  right: 4vw;
-  bottom: 35px;
-  z-index: 2;
-  writing-mode: vertical-rl;
-  font-family: "Space Mono";
-  font-size: 9px;
-  color: #777;
-  letter-spacing: .2em;
 }
 
 .section {
