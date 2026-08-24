@@ -3,6 +3,7 @@
 :root {
   --status: #7dff4d;
   --bg: #050505;
+  --border: #4d4d4d7a;
   --panel: #0b0b0b;
   --line: #292929;
   --white: #f4f4f4;
@@ -140,6 +141,37 @@ button {
   }
 }
 
+.container{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+.linhas{
+  display: flex;
+  position: absolute;
+}
+.linhas span{
+  display: block; 
+  width: 1px;
+  height: 24rem;
+  background: #8f9eaf57;
+  margin: 0 97px;
+  animation: animar calc(40s / var(--i)) linear infinite;
+  
+}
+
+@keyframes animar{
+  0%{
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+
 .hero {
   min-height: 100vh;
   position: relative;
@@ -266,7 +298,7 @@ button {
 
 .section {
   padding: 130px 7vw;
-  border-top: 1px solid #151515
+  border-top: 1px solid var(--border);
 }
 
 .section-head {
@@ -412,7 +444,7 @@ button {
 }
 
 .specs {
-  border-top: 1px solid #292929
+  border-top: 1px solid var(--border)
 }
 
 .spec {
@@ -512,7 +544,7 @@ button {
 }
 
 footer {
-  border-top: 1px solid #1b1b1b;
+  border-top: 1px solid #ffffff5d;
   padding: 25px 7vw;
   display: flex;
   justify-content: space-between;
@@ -520,6 +552,8 @@ footer {
   font-family: "Space Mono";
   font-size: 9px;
 }
+
+/* estilos responsivos */
 
 @media(max-width:800px) {
   .topbar {
