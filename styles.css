@@ -49,7 +49,7 @@ button {
   justify-content: space-between;
   padding: 28px 4vw;
   background-color: rgba(0, 0, 0, .3);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 }
 
 .logo {
@@ -158,11 +158,11 @@ button {
   height: 24rem;
   background: #8f9eaf57;
   margin: 0 97px;
-  animation: animar calc(40s / var(--i)) linear infinite;
+  animation: linhas calc(40s / var(--i)) linear infinite;
   
 }
 
-@keyframes animar{
+@keyframes linhas{
   0%{
     transform: translateY(-100vh);
     opacity: 1;
@@ -301,6 +301,7 @@ button {
 .section {
   padding: 130px 7vw;
   border-top: 1px solid var(--border);
+  
 }
 
 .section-head {
@@ -323,13 +324,29 @@ button {
   letter-spacing: -.06em;
   line-height: .9;
   text-transform: uppercase;
+  animation: fly-in 1s ease-out;
+  animation-timeline: view();
+  animation-range: cover 0% cover 40%;
 }
 
 .intro {
   max-width: 420px;
   color: #777;
   line-height: 1.7;
-  font-size: 13px
+  font-size: 13px;
+
+}
+
+
+@keyframes fly-in{
+  from{
+    opacity: 0;
+    translate:-100vw 0;
+  }
+  to{
+    opacity: 1;
+    translate:0 0;
+  }
 }
 
 .projects {
@@ -349,11 +366,22 @@ button {
   flex-direction: column;
   justify-content: space-between;
   transition: .35s;
+  z-index: 1;
 }
 
 .project:hover {
   border-color: #555;
-  transform: translateY(-5px)
+  transform: translateY(-5px);
+  background: repeating-conic-gradient(from var(--a), #fff 0%, #fff 5%, transparent 5%, transparent 40%, #fff 50%);
+  animation: spin 7.5s linear infinite;
+}
+
+.project::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--panel);
+  z-index: -1;
 }
 
 .project-visual {
@@ -437,7 +465,10 @@ button {
 .about-text {
   font-size: clamp(30px, 4vw, 62px);
   line-height: 1.05;
-  letter-spacing: -.055em
+  letter-spacing: -.055em;
+  animation: fly-in 1s ease-out;
+  animation-timeline: view();
+  animation-range: cover 0% cover 40%;
 }
 
 .about-text em {
@@ -517,7 +548,7 @@ button {
 .contact h2 {
   font-size: clamp(55px, 9vw, 140px);
   line-height: .82;
-  letter-spacing: -.07em
+  letter-spacing: -.07em;
 }
 
 .contact h2 span {
@@ -539,6 +570,7 @@ button {
 }
 
 .links a {
+  color: #fff;
   border: 1px solid #333;
   padding: 12px 15px;
   font-size: 9px;
@@ -615,3 +647,20 @@ footer {
     margin-top: 40px
   }
 }
+
+/* animacoes keyframes */
+
+/*animcao de entrada comeco */
+
+@keyframes fly-in{
+  from{
+    opacity: 0;
+    translate:-100vw 0;
+  }
+  to{
+    opacity: 1;
+    translate:0 0;
+  }
+}
+
+/*animcao de entrada fim */
