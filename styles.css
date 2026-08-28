@@ -304,7 +304,7 @@ button {
   gap: 20px;
   animation: reveal linear both;
   animation-timeline: view(block);
-  animation-range: cover 0% cover 27%;
+  animation-range: cover 0% cover 13%;
 
 }
 
@@ -460,7 +460,7 @@ button {
   border-left: 1px solid #292929;
   animation: reveal linear both;
   animation-timeline: view(block);
-  animation-range: cover 0% cover 20%;
+  animation-range: cover 0% cover 27%;
 }
 
 .tech {
