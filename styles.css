@@ -105,45 +105,6 @@ button {
   animation: pulseGlow 5s ease-in-out infinite;
 }
 
-@keyframes pulseGlow {
-  0% {
-    opacity: 0.45;
-    text-shadow:
-      0 0 2px var(--status),
-      0 0 4px var(--status);
-  }
-
-  25% {
-    opacity: 1;
-    text-shadow:
-      0 0 5px var(--status),
-      0 0 12px var(--status),
-      0 0 25px var(--status);
-  }
-
-  50% {
-    opacity: 0.35;
-    text-shadow:
-      0 0 2px var(--status);
-  }
-
-  75% {
-    opacity: 1;
-    text-shadow:
-      0 0 8px var(--status),
-      0 0 20px var(--status),
-      0 0 45px var(--status),
-      0 0 80px var(--status);
-  }
-
-  100% {
-    opacity: 0.45;
-    text-shadow:
-      0 0 2px var(--status),
-      0 0 4px var(--status);
-  }
-}
-
 .container{
   position: absolute;
   width: 100%;
@@ -266,6 +227,12 @@ button {
   border-radius: 4px;
 }
 
+@property --a {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: true;
+}
+
 .cta::after{
   display: flex;
   align-items: center;
@@ -279,20 +246,6 @@ button {
   background: #1b1b1b;
 }
 
-@property --a {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: true;
-}
-
-@keyframes spin {
-  0% {
-    --a: 0deg;
-  }
-  100% {
-    --a: 360deg;
-  }
-}
 
 .cta:hover {
   background: var(--black);
@@ -336,7 +289,7 @@ button {
 
 .intro {
   max-width: 420px;
-  color: #777;
+  color: #888888;
   line-height: 1.7;
   font-size: 13px;
    animation: fly-in-inverse 2s ease-out;
@@ -493,7 +446,7 @@ button {
 }
 
 .spec span:first-child {
-  color: #666
+  color: #bdbdbd
 }
 
 .spec span:last-child {
@@ -504,7 +457,10 @@ button {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   border-top: 1px solid #292929;
-  border-left: 1px solid #292929
+  border-left: 1px solid #292929;
+  animation: reveal linear both;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 20%;
 }
 
 .tech {
@@ -537,10 +493,10 @@ button {
   overflow: hidden;
 }
 
-.contact h2.show {
-  animation: fly-in 1s ease-out forwards;
+.contact.show  {
+  animation: reveal linear both;
   animation-timeline: view(block);
-  animation-range: cover 20% cover 50%;
+  animation-range: cover 0% cover 27%;
 }
 
 .contact::after {
@@ -575,7 +531,7 @@ button {
   display: flex;
   gap: 10px;
   margin-top: 25px;
-  flex-wrap: wrap
+  flex-wrap: wrap;
 }
 
 .links a {
@@ -659,6 +615,8 @@ footer {
 
 /* animacoes keyframes */
 
+
+
 /*animcao comeco */
 
 @keyframes fly-in{
@@ -689,6 +647,20 @@ footer {
 
 /*animcao fim */
 
+/*animcao comeco .cta */
+
+@keyframes spin {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
+}
+
+/*animcao fim .cta*/
+
+
 /*animcao comeco */
 
 @keyframes reveal{
@@ -699,6 +671,49 @@ footer {
   to{
     opacity: 1;
     translate:0 0;
+  }
+}
+
+/*animcao fim */
+
+/*animcao comeco */
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.45;
+    text-shadow:
+      0 0 2px var(--status),
+      0 0 4px var(--status);
+  }
+
+  25% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px var(--status),
+      0 0 12px var(--status),
+      0 0 25px var(--status);
+  }
+
+  50% {
+    opacity: 0.35;
+    text-shadow:
+      0 0 2px var(--status);
+  }
+
+  75% {
+    opacity: 1;
+    text-shadow:
+      0 0 8px var(--status),
+      0 0 20px var(--status),
+      0 0 45px var(--status),
+      0 0 80px var(--status);
+  }
+
+  100% {
+    opacity: 0.45;
+    text-shadow:
+      0 0 2px var(--status),
+      0 0 4px var(--status);
   }
 }
 
