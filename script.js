@@ -9,3 +9,15 @@ function navFixed() {
         navegation.classList.remove('ativa');
     }
 };
+
+const contact = document.querySelector(".contact");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      contact.classList.add("show");
+    }
+  });
+});
+
+observer.observe(contact);
