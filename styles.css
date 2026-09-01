@@ -174,8 +174,8 @@ button {
 
 .eyebrow {
   font-family: "Space Mono", monospace;
-  color: #999;
-  font-size: 11px;
+  color: #b3b3b3;
+  font-size: 12px;
   letter-spacing: .25em;
   margin-bottom: 55px;
 }
@@ -196,9 +196,9 @@ button {
 .hero-copy {
   margin-top: 30px;
   max-width: 500px;
-  color: #aaa;
+  color: #bbbbbb;
   line-height: 1.7;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .cta {
@@ -289,10 +289,10 @@ button {
 
 .intro {
   max-width: 420px;
-  color: #888888;
+  color: #bbbbbb;
   line-height: 1.7;
-  font-size: 13px;
-   animation: fly-in-inverse 2s ease-out;
+  font-size: 14px;
+  animation: fly-in-inverse 2s ease-out;
   animation-timeline: view();
   animation-range: cover 0% cover 30%;
 }
@@ -479,8 +479,9 @@ button {
 
 .tech span {
   font-family: "Space Mono";
-  font-size: 10px;
-  color: #8f8f8f
+  font-size: 12px;
+  font-weight: 700;
+  color: #bdbdbd
 }
 
 .contact {
