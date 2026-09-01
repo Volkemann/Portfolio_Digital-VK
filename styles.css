@@ -118,26 +118,21 @@ button {
   display: block; 
   width: 1px;
   height: 24rem;
-  background: #8f9eaf57;
+  background: #b9c7d879;
   margin: 0 97px;
   animation: linhas calc(40s / var(--i)) linear infinite;
   
 }
 
-@keyframes linhas{
-  0%{
-    transform: translateY(-100vh);
-    opacity: 1;
-  }
-  100%{
-    transform: translateY(100vh);
-    opacity: 0;
-  }
+
+.finisher-header {
+  position: relative;
+  isolation: isolate;
 }
 
-
-.hero {
+.hero{
   min-height: 100vh;
+  width: 100%;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -154,6 +149,7 @@ button {
     linear-gradient(0deg, #050505 0%, transparent 34%);
   z-index: 1;
 }
+
 
 .hero-image {
   position: absolute;
@@ -616,6 +612,17 @@ footer {
 
 /* animacoes keyframes */
 
+
+@keyframes linhas{
+  0%{
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
 
 
 /*animcao comeco */

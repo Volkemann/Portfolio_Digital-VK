@@ -10,7 +10,7 @@ function navFixed() {
     }
 };
 
-const contact = document.querySelector(".contact",".about");
+const contact = document.querySelector(".contact, .about");
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -21,3 +21,8 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 observer.observe(contact);
+
+
+
+
+
