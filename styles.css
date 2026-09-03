@@ -137,7 +137,7 @@ button {
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  background: #000;
+  background-color: #000;
 }
 
 .hero::before {
@@ -211,6 +211,7 @@ button {
   transition: 0.25s;
   z-index: 0;
 }
+
 
 .cta::before {
   content: "";
@@ -540,7 +541,7 @@ button {
 }
 
 .links a:hover {
-  transition: 0.25s ease-in-out;
+  transition: 0.35s ease-in-out;
   transform: translateY(-2px);
   border: 1px solid #fff;
 }
@@ -671,14 +672,22 @@ footer {
 
 /*animcao comeco */
 
-@keyframes reveal{
-  from{
+@keyframes reveal {
+  0% {
     opacity: 0;
-    translate:0 100vh;
+    transform: translateY(80px) scale(.91);
+    filter: blur(8px);
   }
-  to{
+
+  40% {
+    opacity: .5;
+    filter: blur(3px);
+  }
+
+  100% {
     opacity: 1;
-    translate:0 0;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
 
@@ -726,5 +735,6 @@ footer {
 }
 
 /*animcao fim */
+
 
 /* animacoes keyframes */
