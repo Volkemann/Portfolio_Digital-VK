@@ -47,9 +47,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 4vw;
-  background-color: rgba(0, 0, 0, .3);
-  backdrop-filter: blur(5px);
+  padding: 14px 4vw;
+  backdrop-filter: blur(10px);
 }
 
 .logo img {
@@ -58,6 +57,7 @@ button {
   object-fit: cover;
    mix-blend-mode: screen;
 }
+
 
 .nav {
   display: flex;
@@ -79,15 +79,23 @@ button {
   content: '';
   position: absolute;
   bottom: 0;
+  left: 50%;
   width: 0;
-  left: 0;
   height: 2px;
-  background: #ffffff;
-  transition: width 0.6s ease;
+  background: #fff;
+  transform: translateX(-50%);
+  transition: width .4s ease;
 }
 
-.nav :hover::after {
+.nav a:hover::after {
   width: 100%;
+  box-shadow:
+    0 0 5px #fff,
+    0 0 12px rgba(255, 255, 255, .5);
+}
+
+.topbar.ativa {
+  color: #fff;
 }
 
 .status {
@@ -105,31 +113,6 @@ button {
   animation: pulseGlow 5s ease-in-out infinite;
 }
 
-.container{
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-}
-.linhas{
-  display: flex;
-  position: absolute;
-}
-.linhas span{
-  display: block; 
-  width: 1px;
-  height: 24rem;
-  background: #b9c7d879;
-  margin: 0 97px;
-  animation: linhas calc(40s / var(--i)) linear infinite;
-  
-}
-
-
-.finisher-header {
-  position: relative;
-  isolation: isolate;
-}
-
 .hero{
   min-height: 100vh;
   width: 100%;
@@ -137,16 +120,13 @@ button {
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  background-color: #000;
+    background: radial-gradient(circle at top, #000 35%, #5e5e5e96 45%, #000 75%)
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, .92) 0%, rgba(0, 0, 0, .28) 48%, rgba(0, 0, 0, .35) 100%),
-    linear-gradient(0deg, #050505 0%, transparent 34%);
   z-index: 1;
 }
 
@@ -201,7 +181,7 @@ button {
   position: relative;
   display: inline-flex;
   margin-top: 30px;
-  background: var(--black2);
+  background: rgba(255, 255, 255, 0);
   padding: 15px 23px;
   border-radius: 3px;
   font-size: 11px;
@@ -418,7 +398,7 @@ button {
   letter-spacing: -.055em;
   animation: fly-in 1s ease-out;
   animation-timeline: view();
-  animation-range: cover 0% cover 40%;
+  animation-range: cover 0% cover 30%;
 }
 
 .about-text em {
@@ -554,6 +534,7 @@ footer {
   color: #555;
   font-family: "Space Mono";
   font-size: 10px;
+  
 }
 
 /* estilos responsivos */
