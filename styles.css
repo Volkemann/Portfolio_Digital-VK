@@ -440,8 +440,9 @@ button {
 
 .project-no {
   font-family: "Space Mono";
-  color: #777;
-  font-size: 11px
+  color: #9b9b9b;
+  font-weight: 700;
+  font-size: 14px
 }
 
 .project h3 {
@@ -452,8 +453,8 @@ button {
 }
 
 .project p {
-  color: #777;
-  font-size: 12px;
+  color: #9b9b9b;
+  font-size: 14px;
   line-height: 1.6;
   max-width: 440px
 }
@@ -470,7 +471,8 @@ button {
   padding: 7px 9px;
   color: #aaa;
   font-family: "Space Mono";
-  font-size: 8px;
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: .08em;
 }
 
@@ -640,9 +642,9 @@ footer {
   padding: 25px 7vw;
   display: flex;
   justify-content: space-between;
-  color: #555;
+  color: #868686;
   font-family: "Space Mono";
-  font-size: 10px;
+  font-size: 11px;
 
 }
 
