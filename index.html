@@ -11,6 +11,15 @@
 
 <body>
 
+  <div class="loader">
+    <div class="loader-logo">
+      <!-- Peça esquerda -->
+      <img class="logo-piece logo-left" src="img/icon/IconLogo-V.png" alt="">
+      <!-- Peça direita -->
+      <img class="logo-piece logo-right" src="img/icon/IconLogo-V.png" alt="">
+    </div>
+  </div>
+
   <header id="topbar" class="topbar">
     <a class="logo" href="#" aria-label="Voltar ao início">
       <img src="img/icon/IconLogo-V.png" alt="Logo">
@@ -32,7 +41,8 @@
         estudante focado em JavaScript e experiências web.
         Transformo ideias em interfaces digitais com código, estética e funcionalidade.
       </p>
-      <a class="cta" href="#projects">Explorar projetos ↓</a>
+      <a class="cta" href="#projects">
+        <span>Explorar projetos ↓</span></a>
     </div>
   </section>
 
@@ -148,7 +158,7 @@
   <section class="section contact" id="contact">
     <div>
       <div class="kicker">04 / CONTATO</div>
-      <h2>VAMOS<br><span>CONSTRUIR.</span></h2>
+      <h2>SUA IDEIA<br><span>MEU CÓDIGO</span></h2>
     </div>
     <div class="contact-info">
       <p>Tem um projeto, ideia ou oportunidade? Vamos transformar sua ideia em uma experiência digital.</p>
@@ -165,8 +175,10 @@
     <span>DESIGN & CODE FOR VK</span>
     <span>© 2026</span>
   </footer>
-  
-<script src="./script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="./script.js"></script>
 
 </body>
+
 </html>
